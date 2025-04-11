@@ -16,7 +16,7 @@ def test_single_byte_roundtrip():
         bw.write_bit(bit)
     bw.pad_to_byte()
     data = bw.get_bytes()
-    assert data == b"\xB1"
+    assert data == b"\xb1"
 
     br = BitReader(data, bw.nbits)
     assert [br.read_bit() for _ in range(8)] == pattern
