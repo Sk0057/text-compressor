@@ -1,6 +1,7 @@
 README.md
 pyproject.toml
 tests/test_bitstream.py
+tests/test_rle.py
 text_compressor/__init__.py
 text_compressor/cli.py
 text_compressor.egg-info/PKG-INFO
@@ -8,4 +9,7 @@ text_compressor.egg-info/SOURCES.txt
 text_compressor.egg-info/dependency_links.txt
 text_compressor.egg-info/entry_points.txt
 text_compressor.egg-info/top_level.txt
+text_compressor/algorithms/rle.py
+text_compressor/utils/__init__.py
 text_compressor/utils/bitstream.py
+text_compressor/utils/stats.py
