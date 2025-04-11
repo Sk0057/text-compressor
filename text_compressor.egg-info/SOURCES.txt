@@ -1,10 +1,12 @@
 README.md
 pyproject.toml
 tests/test_bitstream.py
+tests/test_cli.py
 tests/test_huffman.py
 tests/test_rle.py
 text_compressor/__init__.py
 text_compressor/cli.py
+text_compressor/compressors.py
 text_compressor.egg-info/PKG-INFO
 text_compressor.egg-info/SOURCES.txt
 text_compressor.egg-info/dependency_links.txt
