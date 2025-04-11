@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "CLI tool for text compression using RLE and Huffman coding"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 requires-python = ">=3.10"
 dependencies = []
 
@@ -15,5 +15,8 @@ text-compressor = "text_compressor.cli:cli"
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.black]
-line-length = 88
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["text_compressor*"]
+exclude = ["tests*", "samples*"]
+

@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: text-compressor
+Version: 0.1.0
+Summary: CLI tool for text compression using RLE and Huffman coding
+Author-email: Your Name <you@example.com>
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Text Compressor

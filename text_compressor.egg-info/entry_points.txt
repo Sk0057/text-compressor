@@ -1,0 +1,2 @@
+[console_scripts]
+text-compressor = text_compressor.cli:cli
