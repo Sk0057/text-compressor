@@ -111,18 +111,6 @@ pytest -q                         # 20 tests, 100 % pass
 
 ---
 
-## 🖼 Architecture Diagrams
-
-Diagrams (Use‑Case, DFD, Sequence) are in [`docs/img/`](docs/img/). They are referenced in the project report and rendered on GitHub.
-
----
-
-## 🎥 Video Demo
-
-A 3‑minute screencast walking through installation, compression, and decompression is available → [Watch on YouTube](https://youtu.be/XXXXXXXXXX) *(unlisted).* The link is also included in the project report’s Appendix.
-
----
-
 ## 📄 License
 
 Released under the **MIT License**. See `LICENSE` for details.
