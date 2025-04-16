@@ -136,7 +136,7 @@ def encode(text: str) -> bytes:
     # 3️⃣  Serialize tree in pre‑order
     tree_buf = bytearray()
     _serialize_tree(root, tree_buf)  # fills tree_buf
-    tree_buf.extend(total_bits.to_bytes(2, "big"))  # 🔹 append bit‑count here
+    tree_buf.extend(total_bits.to_bytes(3, "big"))  # 🔹 append bit‑count here
 
     # 4️⃣  Now compute *tree_size* including the 2‑byte bit‑count
     tree_size = len(tree_buf).to_bytes(2, "big")  # big‑endian
@@ -162,7 +162,7 @@ def decode(buf: bytes) -> str:
     tree_end = 11 + tree_size
     tree_mv = memoryview(buf[11:tree_end])
     root, idx = _deserialize_tree(tree_mv)
-    total_bits = int.from_bytes(tree_mv[idx : idx + 2], "big")
+    total_bits = int.from_bytes(tree_mv[idx : idx + 3], "big")
 
     # 🔹 Special‑case: single‑leaf tree
     if root.is_leaf():

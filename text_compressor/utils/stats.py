@@ -19,13 +19,22 @@ class Stats:
 
 
 class Timer:
-    """Context‑manager timer:  with Timer() as t: ...;  t.elapsed has seconds."""
+    """Context-manager timer AND direct timer. Use:
+    • with Timer() as t: ...
+    • t = Timer(); t.elapsed()"""
+
+    def __init__(self):
+        self._start = perf_counter()
+        self._end = None
+
+    def elapsed(self) -> float:
+        return (self._end or perf_counter()) - self._start
 
     def __enter__(self) -> "Timer":
         self._start = perf_counter()
         return self
 
     def __exit__(self, exc_type, exc, tb):
-        self.elapsed = perf_counter() - self._start
-        # don’t suppress exceptions
+        self._end = perf_counter()
+        # Don’t suppress exceptions
         return False

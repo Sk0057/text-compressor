@@ -73,9 +73,10 @@ class RLECompressor:
             f.write(payload)
 
         return Stats(
-            orig_bytes=len(text.encode("utf-8")),
-            comp_bytes=len(payload) + 5,
-            seconds=timer.stop(),
+            orig_size=len(text.encode("utf-8")),
+            comp_size=len(payload) + 5,
+            ratio=(len(payload) + 5) / len(text.encode("utf-8")),
+            time_sec=timer.elapsed(),
         )
 
     def decompress(self, in_path: Path, out_path: Path) -> Stats:
@@ -92,7 +93,8 @@ class RLECompressor:
         text = decode(payload)
         Path(out_path).write_text(text, encoding="utf-8")
         return Stats(
-            orig_bytes=len(text.encode("utf-8")),
-            comp_bytes=len(payload) + 5,
-            seconds=timer.stop(),
+            orig_size=len(text.encode("utf-8")),
+            comp_size=len(payload) + 5,
+            ratio=(len(payload) + 5) / len(text.encode("utf-8")),
+            time_sec=timer.elapsed(),
         )
